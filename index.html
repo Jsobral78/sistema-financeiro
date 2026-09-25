@@ -875,20 +875,19 @@
     <script>
         let usuarioLogado = "";
 
-        if (!localStorage.getItem('js_utilizadores_v9')) {
-            localStorage.setItem('js_utilizadores_v9', 'true');
+        if (!localStorage.getItem('js_utilizadores_v10')) {
+            localStorage.setItem('js_utilizadores_v10', 'true');
             localStorage.setItem('js_utilizadores', JSON.stringify([
                 { nome: "Jean Sobral", senha: "123", perfil: "Admin", status: "Ativo" },
                 { nome: "Convidado", senha: "123456", perfil: "Leitura", status: "Ativo" },
-                { nome: "Erlane Carvalho", senha: "123456", perfil: "Gestor", status: "Ativo" },
                 { nome: "Erlane", senha: "123456", perfil: "Gestor", status: "Ativo" }
             ]));
         }
 
         let listaUtilizadores = JSON.parse(localStorage.getItem('js_utilizadores')) || [
-            { nome: "Jean Sobral", senha: "abc123", perfil: "Admin", status: "Ativo" },
-            { nome: "Convidado", senha: "1234", perfil: "Leitura", status: "Ativo" },
-            { nome: "Erlane", senha: "1234", perfil: "Gestor", status: "Ativo" }
+            { nome: "Jean Sobral", senha: "123", perfil: "Admin", status: "Ativo" },
+            { nome: "Convidado", senha: "123456", perfil: "Leitura", status: "Ativo" },
+            { nome: "Erlane", senha: "123456", perfil: "Gestor", status: "Ativo" }
         ];
 
         // Variáveis financeiras globais da sessão atual
