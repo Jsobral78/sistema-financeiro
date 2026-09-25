@@ -37,7 +37,7 @@
                     Entrar no Sistema
                 </button>
             </form>
-            <p class="text-[11px] text-center text-gray-400 mt-4">Senha do Jean: <span class="text-red-600 font-bold"></span> | Novos utilizadores: <span class="text-red-600 font-bold"></span></p>
+            <p class="text-[11px] text-center text-gray-400 mt-4">Senha do Jean: <span class="text-red-600 font-bold">123</span> | Demais utilizadores: <span class="text-red-600 font-bold">123456</span></p>
         </div>
     </div>
 
@@ -875,17 +875,21 @@
     <script>
         let usuarioLogado = "";
 
-        if (!localStorage.getItem('js_utilizadores_v8')) {
-            localStorage.setItem('js_utilizadores_v8', 'true');
+        if (!localStorage.getItem('js_utilizadores_v9')) {
+            localStorage.setItem('js_utilizadores_v9', 'true');
             localStorage.setItem('js_utilizadores', JSON.stringify([
                 { nome: "Jean Sobral", senha: "123", perfil: "Admin", status: "Ativo" },
-                { nome: "Convidado", senha: "123456", perfil: "Leitura", status: "Ativo" }
+                { nome: "Convidado", senha: "123456", perfil: "Leitura", status: "Ativo" },
+                { nome: "Erlane Carvalho", senha: "123456", perfil: "Gestor", status: "Ativo" },
+                { nome: "Erlane", senha: "123456", perfil: "Gestor", status: "Ativo" }
             ]));
         }
 
         let listaUtilizadores = JSON.parse(localStorage.getItem('js_utilizadores')) || [
             { nome: "Jean Sobral", senha: "123", perfil: "Admin", status: "Ativo" },
-            { nome: "Convidado", senha: "123456", perfil: "Leitura", status: "Ativo" }
+            { nome: "Convidado", senha: "123456", perfil: "Leitura", status: "Ativo" },
+            { nome: "Erlane Carvalho", senha: "123456", perfil: "Gestor", status: "Ativo" },
+            { nome: "Erlane", senha: "123456", perfil: "Gestor", status: "Ativo" }
         ];
 
         // Variáveis financeiras globais da sessão atual
@@ -958,7 +962,6 @@
                 erroDiv.classList.add('hidden');
                 usuarioLogado = usuarioEscolhido;
 
-                // Carrega os dados específicos deste utilizador
                 carregarDadosDoUtilizador(usuarioLogado);
 
                 document.getElementById('lbl-usuario-logado').innerText = usuarioLogado;
